@@ -4,7 +4,7 @@ module Approved
   module Generators
     class ApprovedGenerator < Rails::Generators::NamedBase
       source_root File.expand_path("../../template", __FILE__)
-
+      hook_for :orm
       def initializer
         puts "initializer #{name}: #{table_name}:#{file_name}"
       end

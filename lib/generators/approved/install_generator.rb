@@ -6,6 +6,7 @@ module Approved
       source_root File.expand_path("../../template", __FILE__)
 
       def copy_initialize
+        puts "aaaaaaaaaaaaaaaa"
         template "approved.rb", "config/initializers/approved.rb"
       end
 
