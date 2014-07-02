@@ -1,7 +1,7 @@
 # Approved
-In development.  
+In development.
 
-It is a gem enforcing authorization web site.  
+It is a gem enforcing authorization web site.
 
 
 ## Installation
@@ -19,13 +19,17 @@ And then execute:
 ## Getting started
 
 Create a migration file for table creation first
+
     rails g approved model_name
 
 Are created db/migrate/~
+
 make DB table
+
     rake db:migrate
 
 rails start
+
     localhost:3000/approved/roles
 
 route information display
