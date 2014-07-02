@@ -35,7 +35,13 @@ rails start
 
     localhost:3000/approved/roles
 
-route information display
+start is
+
+1. create role name
+
+2. created role name is click
+
+3. route information display
 
 
 ## Contributing
