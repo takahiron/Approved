@@ -1,0 +1,21 @@
+<h2>
+<!-- locatized -->
+  Approved Role
+</h2>
+
+<p>
+<!-- locatized -->
+list role name
+</p>
+<%= link_to "create name", new_role_path() %>
+<%= form_tag(role_delete_path, method: :delete) do %>
+<table>
+<%= render partial: "index_header" %>
+  <tbody>
+    <% @roles.each do |role| %>
+      <%= render partial: "index_list", locals: {role: role} %>
+    <% end %>
+  </tbody>
+</table>
+<%= submit_tag "delete"%>
+<% end %>

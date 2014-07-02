@@ -1,0 +1,15 @@
+<%= form_for(resource, url: from) do |f|%>
+<table>
+  <tbody>
+    <tr>
+      <th>
+        name
+      </th>
+      <td>
+        <%= f.text_field :name %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<%= f.submit 'create' %>
+<% end %>

@@ -1,0 +1,50 @@
+<h2>
+  <%= @role[:name]%> edit
+</h2>
+
+
+<%= form_tag(role_path(@role), method: :put) do%>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Helper
+      </th>
+      <th>
+        Http verb
+      </th>
+      <th>
+        Path
+      </th>
+      <th>
+        controller#action
+      </th>
+      <th>
+        approval
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lines.each do |line|%>
+    <tr>
+      <td>
+        <%= line[:name] %>
+      </td>
+      <td>
+        <%= line[:verb] %>
+      </td>
+      <td>
+        <%= line[:path] %>
+      </td>
+      <td>
+        <%= line[:reqs] %>
+      </td>
+      <td>
+        <%= check_box_tag "role[authority][]", line[:reqs], @role.get_authority[line[:reqs]].present? ? true:false %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= submit_tag "update" %>
+<% end %>

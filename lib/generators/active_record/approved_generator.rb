@@ -1,13 +1,13 @@
 require 'rails/generators/active_record'
 
 
-module ActiveRecord 
+module ActiveRecord
   module Generators
     class ApprovedGenerator < ActiveRecord::Generators::Base
       source_root File.expand_path("../../template", __FILE__)
 
       def initializer
-        puts "initializer #{name}: #{table_name}:#{file_name}"
+        puts "initializer active record #{name}: #{table_name}:#{file_name}"
       end
 
       def migrate_role

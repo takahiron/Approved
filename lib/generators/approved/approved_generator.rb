@@ -10,11 +10,11 @@ module Approved
       end
 
       def migrate_role
-        template "migrate/role.rb", "db/migrate/approved_create_roles.rb"
+      #  template "migrate/role.rb", "db/migrate/approved_create_roles.rb"
       end
 
       def migrate_role_and_user
-        template "migrate/role_and_user.rb", "db/migrate/approved_create_role_and_user.rb"
+      #  template "migrate/role_and_user.rb", "db/migrate/approved_create_role_and_user.rb"
       end
     end
   end

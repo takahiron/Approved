@@ -1,0 +1,8 @@
+<tr>
+  <td>
+    <%= link_to role[:name], edit_role_path(role) %>
+  </td>
+  <td>
+    <%= check_box_tag "role[]", role[:id]%>
+  </td>
+</tr>
