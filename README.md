@@ -8,7 +8,10 @@ It is a gem enforcing authorization web site.
 
 Add this line to your application's Gemfile:
 
-    gem 'approved', git: 'git://github.com/takahiron/Approved.git'
+download is gem
+
+    gem 'approved', :path => '/your/download/gem/path'
+
 
 And then execute:
 
