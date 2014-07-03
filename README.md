@@ -8,7 +8,9 @@ It is a gem enforcing authorization web site.
 
 Add this line to your application's Gemfile:
 
-download is gem
+    gem 'approved', :git => 'https://my_account@github.com/takahiron/Approved.git'
+
+or download is gem
 
     gem 'approved', :path => '/your/download/gem/path'
 
