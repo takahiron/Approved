@@ -5,17 +5,24 @@ module Approved
     class ApprovedGenerator < Rails::Generators::NamedBase
       source_root File.expand_path("../../template", __FILE__)
       hook_for :orm
+
       def initializer
-        puts "initializer #{name}: #{table_name}:#{file_name}"
+        seed_path = "#{Rails.root}/db/seeds.rb"
+        File.open(seed_path, "a") do |f|
+          f.puts 'if Approved::Role.where(types: "people").first.blank?'
+          f.puts '  Approved::Role.create(name: "people", authority: "{\"Approved::Engine\":true}", types: "people")'
+          f.puts 'end'
+        end
       end
 
-      def migrate_role
-      #  template "migrate/role.rb", "db/migrate/approved_create_roles.rb"
+      def copy_initialize
+        template "approved.rb", "config/initializers/approved.rb"
       end
 
-      def migrate_role_and_user
-      #  template "migrate/role_and_user.rb", "db/migrate/approved_create_role_and_user.rb"
+      def show_readme
+        readme 'README' if behavior == :invoke
       end
+
     end
   end
 end

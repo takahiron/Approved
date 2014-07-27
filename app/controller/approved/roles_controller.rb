@@ -23,12 +23,12 @@ module Approved
       @role = Role.where(id: params[:id]).first
       @lines = Approved.get_routing
       # devise/session#action
+      # 基本は
+      # controller_name#action_name
       # この形で取得する
-      puts @lines
     end
 
     def update
-      puts params.inspect
       role = Role.where(id: params[:id]).first
       role.set_authority = params[:role][:authority]
       respond_to do |format|
@@ -43,7 +43,6 @@ module Approved
       # exsample
       # get delete id
       # params -> role=> ["1","2"]
-      puts params.inspect
       respond_to do |format|
         format.html {redirect_to roles_path()}
       end

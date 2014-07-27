@@ -2,6 +2,7 @@
   <%= @role[:name]%> edit
 </h2>
 
+<%= link_to "mapping", edit_role_and_user_path(@role) %>
 
 <%= form_tag(role_path(@role), method: :put) do%>
 <table>

@@ -1,0 +1,29 @@
+<h2>
+  Set Mapping
+</h2>
+
+<%= form_tag(role_and_user_path(@role), method: :put) do %>
+<table>
+  <thead>
+    <tr>
+      <th>
+      </th>
+      <th>
+        <%= @role.name %>
+      </th>
+    </tr>
+  </thead>
+  <% @users.each do |i|%>
+    <tr>
+      <td>
+        <%= i[@user_name]%>
+      </td>
+      <td>
+        <%= check_box_tag "users[]", i[@user_id], @checked[i[@user_id]].present? %>
+      </td>
+    <tr>
+  <% end %>
+</table>
+
+<%= submit_tag "update"%>
+<% end %>
