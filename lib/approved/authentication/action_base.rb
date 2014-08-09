@@ -17,4 +17,7 @@ class ActionController::Base
     path = "#{params[:controller]}##{params[:action]}"
     yield "tests params" unless authentication.decision(path, 1)
   end
+
+  def set_authentication
+  end
 end

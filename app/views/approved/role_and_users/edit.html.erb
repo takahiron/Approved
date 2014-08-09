@@ -3,7 +3,7 @@
 </h2>
 
 <%= form_tag(role_and_user_path(@role), method: :put) do %>
-<table>
+<table border=1>
   <thead>
     <tr>
       <th>
@@ -24,6 +24,6 @@
     <tr>
   <% end %>
 </table>
-
 <%= submit_tag "update"%>
+<%= link_to "back", edit_role_path(@role) %>
 <% end %>

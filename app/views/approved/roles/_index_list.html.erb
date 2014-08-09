@@ -3,6 +3,6 @@
     <%= link_to role[:name], edit_role_path(role) %>
   </td>
   <td>
-    <%= check_box_tag "role[]", role[:id]%>
+    <%= check_box_tag "role[]", role[:id] unless role[:types] == "people" %>
   </td>
 </tr>

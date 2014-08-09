@@ -2,10 +2,13 @@
   <%= @role[:name]%> edit
 </h2>
 
-<%= link_to "mapping", edit_role_and_user_path(@role) %>
+<%= link_to "mapping", edit_role_and_user_path(@role) unless @role.types == "people" %>
+<% if @role.types == "people" %>
+  <p>For users that are not login</p>
+<% end %>
 
 <%= form_tag(role_path(@role), method: :put) do%>
-<table>
+<table border=1>
   <thead>
     <tr>
       <th>
@@ -48,4 +51,5 @@
   </tbody>
 </table>
 <%= submit_tag "update" %>
+<%= link_to "back", roles_path() %>
 <% end %>
