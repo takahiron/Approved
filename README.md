@@ -44,6 +44,8 @@ the names of the table that is craeted "approved\_role\_and\_users" and "approve
     Description: "approved\_role\_and\_users" thong with table and privilege user
     "approved\_roles" is set access permission for each URL
 
+
+
     $ rake db:seed
 
 authority is added to the "approved\_roles" table
@@ -80,7 +82,9 @@ url is set the controller and action in the Hash
 
     example: {controller: "index", action: "show"}
 
-return True or false
+user\_id integer or nil
+
+return true or false
 
 true if there is an authority
 
