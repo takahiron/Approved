@@ -17,7 +17,7 @@ or download is gem
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 
 
@@ -27,13 +27,30 @@ Create a migration file for table creation first
 
     rails g approved model_name
 
-Are created db/migrate/~
+Are created and chenged file
 
-make DB table
+    * db/migrate/  2 new file
 
-    rake db:migrate
+    * config/initializers/approved.rb new file
+
+    * db/seeds.rb chenged file
+
+Next Rails command
+
+    $ rake db:migrate
+
+the names of the table that is craeted "approved\_role\_and\_users" and "approved\_roles"
+
+    Description: "approved\_role\_and\_users" thong with table and privilege user
+    "approved\_roles" is set access permission for each URL
+
+    $ rake db:seed
+
+authority is added to the "approved\_roles" table
 
 rails start
+
+approved top page
 
     localhost:3000/approved/roles
 
@@ -44,6 +61,28 @@ start is
 2. created role name is click
 
 3. route information display
+
+## Use
+
+application\_controller.rb
+
+    def set_authentication
+      set_redirect_to(set user_id or nil) do |i|
+        # the process against unauthorized access
+      end
+    end
+
+permission settings of the views
+
+    decision?(url, user_id)
+
+url is set the controller and action in the Hash
+
+    example: {controller: "index", action: "show"}
+
+return True or false
+
+true if there is an authority
 
 
 ## Contributing
