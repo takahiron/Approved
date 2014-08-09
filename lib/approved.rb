@@ -5,6 +5,7 @@ require 'approved/models/user_source'
 require 'approved/authentication/action_base'
 require 'approved/action_view_extentions/authentication_decision'
 
+
 module Approved
   autoload :Line, 'approved/line'
   autoload :Config, 'approved/config'
