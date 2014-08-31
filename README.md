@@ -53,8 +53,8 @@ approved initializer setting
 config/initializers/approved.rb
 
     config.user = "model name"
-    config.user_name = "DB column user name"
-    config.user_id = "DB id"
+    config.user_name = "DB column name"
+    config.user_id = "DB column id"
 
 authority is added to the "approved\_roles" table
 
@@ -88,7 +88,7 @@ application\_controller.rb
 
 permission settings of the views
 
-  <% if  decision?(url, user_id) %>>
+    <% if  decision?(url, user_id) %>
 
 url is set the controller and action in the Hash
 
