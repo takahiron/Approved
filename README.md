@@ -8,7 +8,7 @@ It is a gem enforcing authorization web site.
 
 Add this line to your application's Gemfile:
 
-    gem 'approved', :git => 'https://my_account@github.com/takahiron/Approved.git'
+    gem 'approved', :git => 'https://github.com/takahiron/Approved.git'
 
 or download is gem
 
@@ -41,12 +41,20 @@ Next Rails command
 
 the names of the table that is craeted "approved\_role\_and\_users" and "approved\_roles"
 
-    Description: "approved\_role\_and\_users" thong with table and privilege user
-    "approved\_roles" is set access permission for each URL
+    Description: "approved_role_and_users" thong with table and privilege user
+    "approved_roles" is set access permission for each URL
 
-
+initialized insert Role
 
     $ rake db:seed
+
+approved initializer setting
+
+config/initializers/approved.rb
+
+    config.user = "model name"
+    config.user_name = "DB column user name"
+    config.user_id = "DB id"
 
 authority is added to the "approved\_roles" table
 
@@ -64,19 +72,23 @@ start is
 
 3. route information display
 
+4. Click a mapping link of approved/role/:id/edit, to map users and privileges
+
 ## Use
+
+mapping of the role complate, redirect setting
 
 application\_controller.rb
 
     def set_authentication
-      set_redirect_to(set user_id or nil) do |i|
+      set_redirect_to(set user_id or nil) do
         # the process against unauthorized access
       end
     end
 
 permission settings of the views
 
-    decision?(url, user_id)
+  <% if  decision?(url, user_id) %>>
 
 url is set the controller and action in the Hash
 
@@ -89,10 +101,12 @@ return true or false
 true if there is an authority
 
 
-## Contributing
+## Supported Ruby and Rails Version
 
-1. Fork it ( http://github.com/takahiron/Approved/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+* Ruby 2.0 or later
+* Rails 4.0 or later
+
+# Licence
+
+MIT License.
+

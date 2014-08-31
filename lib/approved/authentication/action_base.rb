@@ -15,7 +15,7 @@ class ActionController::Base
   def set_redirect_to(user_id = nil)
     authentication = Approved::Authentication::ActionBase.new
     path = "#{params[:controller]}##{params[:action]}"
-    yield "tests params" unless authentication.decision(path, 1)
+    yield unless authentication.decision(path, user_id)
   end
 
   def set_authentication
