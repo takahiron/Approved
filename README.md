@@ -1,4 +1,4 @@
-# Approved
+# about Approved
 In development.
 
 It is a gem enforcing authorization web site.
